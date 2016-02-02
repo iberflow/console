@@ -39,11 +39,15 @@ class Question implements QuestionableInterface
     /**
      * Question constructor.
      *
-     * @param Cursor $cursor
      * @param Drawer $drawer
+     * @param Cursor $cursor
      */
-    public function __construct(Cursor $cursor, Drawer $drawer)
+    public function __construct(Drawer $drawer, Cursor $cursor = null)
     {
+        if(null === $cursor) {
+            $cursor = new Cursor();
+        }
+
         $this->cursor = $cursor;
         $this->drawer = $drawer;
     }
