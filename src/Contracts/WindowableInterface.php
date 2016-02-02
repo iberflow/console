@@ -35,7 +35,8 @@ interface WindowableInterface
     public function getHeight();
 
     /**
+     * @param $title
      * @return mixed
      */
-    public function setTitle();
+    public function setTitle($title);
 }

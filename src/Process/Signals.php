@@ -44,13 +44,11 @@ class Signals
      */
     public function handleExit(\Closure $callback)
     {
+        // You cannot assign a signal handler for SIGKILL
+
         $this->append(SIGHUP, $callback);
         $this->append(SIGINT, $callback);
         $this->append(SIGQUIT, $callback);
-
-        // You cannot assign a signal handler for SIGKILL
-        // $this->append(SIGKILL, $callback);
-
         $this->append(SIGTERM, $callback);
     }
 
@@ -70,9 +68,9 @@ class Signals
             $return = call_user_func_array($this->listeners[$signal], [$signal]);
         }
 
-        // exit the application
         if (true === $exit) {
-            exit;
+            // exit the application
+            posix_kill(posix_getpid(), SIGKILL);
         }
 
         return $return;

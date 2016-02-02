@@ -17,4 +17,6 @@ $question->setTitle('Isn\'t this awesome?');
 
 $answers = $question->ask();
 
-print_r($answers);
+foreach ($answers as $answer) {
+    echo "Selected: ", $answer, PHP_EOL;
+}

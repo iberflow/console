@@ -17,4 +17,4 @@ $question->setTitle('Isn\'t this awesome?');
 
 $answer = $question->ask();
 
-print_r($answer);
+echo $answer, PHP_EOL;

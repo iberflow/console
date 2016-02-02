@@ -18,6 +18,8 @@ $signal->handleExit(function () {
 echo "Starting an infinite while loop.", PHP_EOL;
 echo "Press CTRL+C to kill the process.", PHP_EOL;
 
-while (true) {
+posix_kill(posix_getpid(), SIGINT);
 
+while (true) {
+  // some long job
 }
