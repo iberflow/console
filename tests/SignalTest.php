@@ -10,7 +10,7 @@ class SignalTest extends \PHPUnit_Framework_TestCase
     {
         $signals = new Signals();
 
-        $signals->append(1, function() {
+        $signals->append(1, function () {
             return 'signal code';
         });
 

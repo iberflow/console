@@ -14,7 +14,24 @@ class Signals
     protected $listeners = [];
 
     /**
-     * Add
+     * Handle application exit signals
+     *
+     * @param \Closure $callback callback to run after the signal is received
+     *
+     * @return void
+     */
+    public function handleExit(\Closure $callback)
+    {
+        // You cannot assign a signal handler for SIGKILL
+
+        $this->append(SIGHUP, $callback);
+        $this->append(SIGINT, $callback);
+        $this->append(SIGQUIT, $callback);
+        $this->append(SIGTERM, $callback);
+    }
+
+    /**
+     * Add signal listener
      *
      * @param int      $signal   signal id
      * @param \Closure $callback function to run when the signal is
@@ -33,23 +50,6 @@ class Signals
         pcntl_signal($signal, [$this, "executeListener"]);
 
         return $this;
-    }
-
-    /**
-     * Handle application exit signals
-     *
-     * @param \Closure $callback callback to run after the signal is received
-     *
-     * @return void
-     */
-    public function handleExit(\Closure $callback)
-    {
-        // You cannot assign a signal handler for SIGKILL
-
-        $this->append(SIGHUP, $callback);
-        $this->append(SIGINT, $callback);
-        $this->append(SIGQUIT, $callback);
-        $this->append(SIGTERM, $callback);
     }
 
     /**

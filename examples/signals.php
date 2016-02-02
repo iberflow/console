@@ -21,5 +21,5 @@ echo "Press CTRL+C to kill the process.", PHP_EOL;
 posix_kill(posix_getpid(), SIGINT);
 
 while (true) {
-  // some long job
+    // some long job
 }
