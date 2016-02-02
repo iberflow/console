@@ -1,0 +1,36 @@
+{
+  "name": "iber/console",
+  "description": "PHP CLI tools",
+  "keywords": [
+    "cli",
+    "question",
+    "window",
+    "process"
+  ],
+  "homepage": "https://iber.lt",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ignas Bernotas",
+      "email": "ignas@iber.lt",
+      "homepage": "https://iber.lt"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/iber/console/issues",
+    "source": "https://github.com/iber/console"
+  },
+  "require": {
+    "php": ">=5.5.9",
+    "iber/phkey": "0.*",
+    "symfony/console": "^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Iber\\Console\\": "src"
+    }
+  }
+}
