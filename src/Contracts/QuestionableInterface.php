@@ -3,12 +3,9 @@
 namespace Iber\Console\Contracts;
 
 /**
- * Interface Question
+ * Interface QuestionableInterface
  *
- * @package  Iber\Lizard\Contracts
- * @author   Ignas Bernotas <ignas@iber.lt>
- * @license  MIT https://opensource.org/licenses/MIT
- * @link     https://iber.lt/
+ * @package Iber\Console\Contracts
  */
 interface QuestionableInterface
 {

@@ -10,7 +10,7 @@ use Iber\Phkey\Environment\Detector;
 /**
  * Class Question
  *
- * @package  Iber\Console\Question
+ * @package Iber\Console\Question
  */
 class Question implements QuestionableInterface
 {
@@ -51,7 +51,7 @@ class Question implements QuestionableInterface
     /**
      * Title setter
      *
-     * @param $title
+     * @param  $title
      * @return $this
      */
     public function setTitle($title)
@@ -64,7 +64,7 @@ class Question implements QuestionableInterface
     /**
      * Choice setter
      *
-     * @param array $choices
+     * @param  array $choices
      * @return $this
      */
     public function setChoices(array $choices)
@@ -77,7 +77,7 @@ class Question implements QuestionableInterface
     /**
      * Answer setter
      *
-     * @param array $answers
+     * @param  array $answers
      * @return $this
      */
     public function setAnswers(array $answers)
@@ -114,25 +114,37 @@ class Question implements QuestionableInterface
         $listener = $phkey->getListenerInstance();
         $event = $listener->getEventDispatcher();
 
-        $event->addListener('key:up', function () {
-            $this->cursor->moveUp(count($this->choices));
-            $this->draw();
-        });
+        $event->addListener(
+            'key:up',
+            function () {
+                $this->cursor->moveUp(count($this->choices));
+                $this->draw();
+            }
+        );
 
-        $event->addListener('key:down', function () {
-            $this->cursor->moveDown(count($this->choices));
-            $this->draw();
-        });
+        $event->addListener(
+            'key:down',
+            function () {
+                $this->cursor->moveDown(count($this->choices));
+                $this->draw();
+            }
+        );
 
-        $event->addListener('key:space', function () {
-            $this->selectChoice();
-            $this->draw();
-        });
+        $event->addListener(
+            'key:space',
+            function () {
+                $this->selectChoice();
+                $this->draw();
+            }
+        );
 
-        $event->addListener('key:enter', function () use ($event) {
-            $event->dispatch('key:stop:listening');
-            $this->drawer->closeWindow();
-        });
+        $event->addListener(
+            'key:enter',
+            function () use ($event) {
+                $event->dispatch('key:stop:listening');
+                $this->drawer->closeWindow();
+            }
+        );
 
         $this->draw();
         $listener->start();
@@ -166,5 +178,4 @@ class Question implements QuestionableInterface
 
         return $this;
     }
-
 }

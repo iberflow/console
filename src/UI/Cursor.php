@@ -5,7 +5,7 @@ namespace Iber\Console\UI;
 /**
  * Class Cursor
  *
- * @package  Iber\Console\UI
+ * @package Iber\Console\UI
  */
 class Cursor
 {

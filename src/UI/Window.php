@@ -7,7 +7,7 @@ use Iber\Console\Contracts\WindowableInterface;
 /**
  * Class Window
  *
- * @package  Iber\Console\UI
+ * @package Iber\Console\UI
  */
 class Window implements WindowableInterface
 {
@@ -63,8 +63,11 @@ class Window implements WindowableInterface
      * Set window title
      *
      * @param $title
+     *
+     * @return mixed
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         fwrite(STDOUT, "\033]0;$title\007");
     }
 }

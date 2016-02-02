@@ -2,6 +2,11 @@
 
 namespace Iber\Console\Contracts;
 
+/**
+ * Interface WindowableInterface
+ *
+ * @package  Iber\Console\Contracts
+ */
 interface WindowableInterface
 {
     /**
@@ -20,12 +25,17 @@ interface WindowableInterface
     public function clearScreen();
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getWidth();
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getHeight();
+
+    /**
+     * @return mixed
+     */
+    public function setTitle();
 }

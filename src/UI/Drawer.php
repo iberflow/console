@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Class Drawer
  *
- * @package  Iber\Console\UI
+ * @package Iber\Console\UI
  */
 class Drawer
 {
@@ -81,7 +81,7 @@ class Drawer
     /**
      * Returns title
      *
-     * @param $title
+     * @param  $title
      * @return string
      */
     public function getTitle($title)
@@ -92,9 +92,9 @@ class Drawer
     /**
      * Returns an array of styled options
      *
-     * @param $choices
-     * @param $position
-     * @param $selected
+     * @param  $choices
+     * @param  $position
+     * @param  $selected
      * @return array
      */
     public function getFormattedChoices(array $choices, $position, $selected)
@@ -125,10 +125,10 @@ class Drawer
     /**
      * Draw the window
      *
-     * @param $title
-     * @param $choices
-     * @param $position
-     * @param $answers
+     * @param  $title
+     * @param  $choices
+     * @param  $position
+     * @param  $answers
      * @return $this
      */
     public function drawWindow($title, $choices, $position, $answers)

@@ -5,7 +5,7 @@ namespace Iber\Console\Question;
 /**
  * Class MultipleChoiceQuestion
  *
- * @package  Iber\Console\Question
+ * @package Iber\Console\Question
  */
 class MultipleChoiceQuestion extends Question
 {
