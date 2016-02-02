@@ -65,6 +65,6 @@ class Window implements WindowableInterface
      * @param $title
      */
     public function setTitle($title) {
-        fwrite(STDOUT, "\033[0;{$title}\007");
+        fwrite(STDOUT, "\033]0;$title\007");
     }
 }
