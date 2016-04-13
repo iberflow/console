@@ -22,7 +22,7 @@
   },
   "require": {
     "php": ">=5.5.9",
-    "iber/phkey": "0.*",
+    "ignasbernotas/phkey": "0.*",
     "symfony/console": "^3.0"
   },
   "require-dev": {
