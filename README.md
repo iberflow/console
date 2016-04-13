@@ -12,7 +12,7 @@ A number of PHP CLI based classes and helpers
 ## Installation
 Install it via composer:
 ```
-composer require iber/console
+composer require ignasbernotas/console
 ```
 
 ## Limitations
